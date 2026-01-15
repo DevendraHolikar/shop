@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../utils/userSlice";
-// import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const disatch = useDispatch();
-  // const navigate = useNavigate()
 
   const handleLogout = () => {
     disatch(removeUser());
-    // navigate("/")
   };
 
   return (

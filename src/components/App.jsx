@@ -4,6 +4,7 @@ import Products from "./Products";
 import Contact from "./Contact";
 import Login from "./Login";
 import Body from "./Body";
+import Home from "./Home";
 import ProtectedRoute from "./ProtectedRoute";
 import PublicRoute from "./PublicRoute";
 
@@ -30,6 +31,7 @@ function App() {
               </ProtectedRoute>
             }
           >
+            <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="products" element={<Products />} />
             <Route path="contact" element={<Contact />} />

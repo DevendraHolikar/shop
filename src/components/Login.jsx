@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-// import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const disatch = useDispatch();
-  // const navigate = useNavigate()
 
   const [emailId, setEmailId] = useState("devendra@gmail.com");
   const [password, setPassword] = useState("1234567890");
@@ -21,12 +19,11 @@ const Login = () => {
 
     validation()
     disatch(addUser({ email: emailId, password: password }));
-    // navigate("/about")
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="card card-border bg-base-300 w-96">
+    <div className="flex justify-center h-screen items-center">
+      <div className="card card-border bg-base-300 w-96 h-fit">
         <div className="card-body">
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Email id</legend>
