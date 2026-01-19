@@ -2,8 +2,8 @@ const ProductCard = (props) => {
   const { title, thumbnail, description, tags ,rating} = props;
   return (
       <div className="card bg-base-300 w-89 shadow-sm ">
-        <figure>
-          <img src={thumbnail} alt={title} />
+        <figure className="pt-6">
+          <img className="bg-base-100" src={thumbnail} alt={title} />
         </figure>
         <div className="card-body gap-4">
           <h2 className="card-title">

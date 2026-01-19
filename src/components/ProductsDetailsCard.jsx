@@ -96,6 +96,7 @@ const ProductsDetailsCard = (props) => {
                 value={qntCount}
                 onChange={(e) => setQntCount(e.target.value)}
                 type="number"
+                min={0}
                 placeholder="Qty"
                 className="input w-12"
               />
