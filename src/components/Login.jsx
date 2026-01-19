@@ -15,7 +15,7 @@ const Login = () => {
   }
 
   const handleSubmit = () => {
-    console.log(emailId, password);
+    // console.log(emailId, password);
 
     validation()
     disatch(addUser({ email: emailId, password: password }));
