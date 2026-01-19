@@ -2,6 +2,7 @@ import ProductCard from "./ProductCard";
 import useProductFetch from "../hooks/useProductFetch";
 import { PRODUCTS_API } from "../utils/constants";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const { products, loading, error } = useProductFetch(PRODUCTS_API);
@@ -61,15 +62,16 @@ const Products = () => {
       ) : (
         <div className="flex flex-wrap justify-items-start gap-6 mt-6 m-auto">
           {filteredData.map((item) => (
-            <ProductCard
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              thumbnail={item.thumbnail}
-              description={item.description}
-              tags={item.tags}
-              rating={item.rating}
-            ></ProductCard>
+            <Link to={"/productsdetails/" + item.id} key={item.id}>
+              <ProductCard
+                id={item.id}
+                title={item.title}
+                thumbnail={item.thumbnail}
+                description={item.description}
+                tags={item.tags}
+                rating={item.rating}
+              ></ProductCard>
+            </Link>
           ))}
         </div>
       )}

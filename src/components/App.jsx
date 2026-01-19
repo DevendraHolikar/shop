@@ -7,6 +7,7 @@ import Body from "./Body";
 import Home from "./Home";
 import ProtectedRoute from "./ProtectedRoute";
 import PublicRoute from "./PublicRoute";
+import ProductsDetails from "./ProductsDetails";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="products" element={<Products />} />
+            <Route path="productsdetails/:productId" element={<ProductsDetails />} />
+
             <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
