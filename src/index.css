@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+@media screen and (max-width: 600px) {
+.custome-flex{
+    display: flex;
+    flex-direction: column;
+    gap: 2;
+    align-items: center;
+}
+}

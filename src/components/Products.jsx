@@ -39,7 +39,7 @@ const Products = () => {
   }
 
   return (
-    <div className="mx-2">
+    <div className="mx-2 mb-6">
       <div className="flex gap-2 justify-end mt-6">
         <input
           value={userInput}
@@ -60,7 +60,7 @@ const Products = () => {
       ) : filteredData.length === 0 ? (
         <h2 className="text-center text-white mt-2">No Results Found</h2>
       ) : (
-        <div className="flex flex-wrap justify-items-start gap-6 mt-6 m-auto">
+        <div className="flex flex-wrap justify-center md:justify-items-start gap-6 mt-6 m-auto">
           {filteredData.map((item) => (
             <Link to={"/productsdetails/" + item.id} key={item.id}>
               <ProductCard
