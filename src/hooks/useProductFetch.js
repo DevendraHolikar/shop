@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { addProducts } from "../utils/productSlice";
 
 const useProductFetch = (PRODUCTS_API) => {
+    const dispatch = useDispatch();
     const hasFetched = useRef(false);
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -24,6 +27,7 @@ const useProductFetch = (PRODUCTS_API) => {
 
                 const data = await response.json();
                 setProducts(data.products);
+                dispatch(addProducts(data.products))
             } catch (err) {
                 setError(err.message);
             } finally {

@@ -132,7 +132,7 @@ const ProductsDetailsCard = (props) => {
               </table>
             </div>
 
-            <div className="bg-base-300 border-base-300 collapse border">
+        <div className="bg-base-300 border-base-300 collapse border">
               <input type="checkbox" className="peer" />
               <div className="collapse-title">More Information</div>
               <div className="collapse-content capitalize flex flex-col">
@@ -143,7 +143,7 @@ const ProductsDetailsCard = (props) => {
                 <span className="text-xs pb-1">availability : {availabilityStatus}</span>
                 <span className="text-xs pb-1">stock : {stock}</span>
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </div>
@@ -165,7 +165,9 @@ const ProductsDetailsCard = (props) => {
                 />
               </div>
               <div className="list-col-grow">
-                <div className="md:text-left text-center">{item.reviewerName}</div>
+                <div className="md:text-left text-center">
+                  {item.reviewerName}
+                </div>
                 <div className="md:text-left text-center text-xs uppercase font-semibold opacity-60">
                   {item.comment}
                 </div>

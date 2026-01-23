@@ -3,19 +3,35 @@ import useProductFetch from "../hooks/useProductFetch";
 import { PRODUCTS_API } from "../utils/constants";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Products = () => {
-  const { products, loading, error } = useProductFetch(PRODUCTS_API);
+  // 1. Get data from Redux (or empty array)
+  const getReduxData = useSelector(
+    (store) => store.products?.allProductsData || [],
+  );
+  const shouldFetch = getReduxData.length === 0;
+
+  const { products, loading, error } = useProductFetch(
+    shouldFetch ? PRODUCTS_API : null,
+  );
   const [userInput, setUserInput] = useState("");
   const [filteredData, setFilteredData] = useState();
   const [searchButtonName, setSearchButtonName] = useState("Search");
 
+  // 2. Choose which data to display
+  const displayProducts = getReduxData.length > 0 ? getReduxData : products;
+
+  // 3. useEffect sets filteredData to displayProducts
+
   useEffect(() => {
-    setFilteredData(products);
-  }, [products]);
+    setFilteredData(displayProducts);
+  }, [displayProducts]);
+
+  // 4. filteredData is now ready to use
 
   const handleSearchClick = () => {
-    const filteredItems = products.filter((item) => {
+    const filteredItems = displayProducts.filter((item) => {
       return item.title.toLowerCase().includes(userInput.toLowerCase());
     });
     setFilteredData(filteredItems);
@@ -23,18 +39,14 @@ const Products = () => {
   };
 
   const handleTopRated = () => {
-    const topRatedFiltered = products.filter((item) => {
+    const topRatedFiltered = displayProducts.filter((item) => {
       return item.rating >= 4;
     });
     setFilteredData(topRatedFiltered);
     setSearchButtonName("All");
   };
 
-  // if (loading) {
-  //   return <h2 className="text-center text-white mt-2">Loading products...</h2>;
-  // }
-
-  if (error) {
+  if (shouldFetch && error) {
     return <h2 className="text-center text-red-500">Error: {error}</h2>;
   }
 
@@ -60,7 +72,7 @@ const Products = () => {
       ) : filteredData.length === 0 ? (
         <h2 className="text-center text-white mt-2">No Results Found</h2>
       ) : (
-        <div className="flex flex-wrap justify-center md:justify-items-start gap-6 mt-6 m-auto">
+        <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-6 m-auto">
           {filteredData.map((item) => (
             <Link to={"/productsdetails/" + item.id} key={item.id}>
               <ProductCard
