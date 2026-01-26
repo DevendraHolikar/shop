@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const ProductsDetailsCard = (props) => {
-  // console.log(props);
+  const dispatch = useDispatch();
 
   const {
+    id,
     availabilityStatus,
     brand,
     category,
@@ -22,19 +25,24 @@ const ProductsDetailsCard = (props) => {
     warrantyInformation,
     weight,
   } = props;
+
   const [clickedImg, setClickedImg] = useState(images[0]);
-  const [qntCount, setQntCount] = useState(1);
+  // const [qntCount, setQntCount] = useState(1);
 
   const handleImageCliced = (imgID) => {
     setClickedImg(images[imgID]);
   };
 
-  const handleQntCountPluss = () => {
-    setQntCount(qntCount + 1);
-  };
-  const handleQntCountMin = () => {
-    if (qntCount <= 0) return;
-    setQntCount(qntCount - 1);
+  // const handleQntCountPluss = () => {
+  //   setQntCount(qntCount + 1);
+  // };
+  // const handleQntCountMin = () => {
+  //   if (qntCount <= 0) return;
+  //   setQntCount(qntCount - 1);
+  // };
+
+  const handleAddToCardClick = () => {
+    dispatch(addItem(props));
   };
 
   return (
@@ -89,7 +97,7 @@ const ProductsDetailsCard = (props) => {
             </div>
 
             <div className="flex py-4 space-x-4">
-              <div className="flex gap-2">
+              {/* <div className="flex gap-2">
                 <button onClick={handleQntCountMin} className="btn btn-soft">
                   −
                 </button>
@@ -104,9 +112,13 @@ const ProductsDetailsCard = (props) => {
                 <button onClick={handleQntCountPluss} className="btn btn-soft">
                   +
                 </button>
-              </div>
+              </div> */}
 
-              <button type="button" className="btn">
+              <button
+                type="button"
+                onClick={handleAddToCardClick}
+                className="btn btn-lg"
+              >
                 Add to Cart
               </button>
             </div>
@@ -132,18 +144,26 @@ const ProductsDetailsCard = (props) => {
               </table>
             </div>
 
-        <div className="bg-base-300 border-base-300 collapse border">
+            <div className="bg-base-300 border-base-300 collapse border">
               <input type="checkbox" className="peer" />
               <div className="collapse-title">More Information</div>
               <div className="collapse-content capitalize flex flex-col">
                 <span className="text-xs pb-1">category : {category}</span>
-                <span className="text-xs pb-1">Return Policy : {returnPolicy}</span>
-                <span className="text-xs pb-1">shipping Information : {shippingInformation}</span>
-                <span className="text-xs pb-1">warranty Information : {warrantyInformation}</span>
-                <span className="text-xs pb-1">availability : {availabilityStatus}</span>
+                <span className="text-xs pb-1">
+                  Return Policy : {returnPolicy}
+                </span>
+                <span className="text-xs pb-1">
+                  shipping Information : {shippingInformation}
+                </span>
+                <span className="text-xs pb-1">
+                  warranty Information : {warrantyInformation}
+                </span>
+                <span className="text-xs pb-1">
+                  availability : {availabilityStatus}
+                </span>
                 <span className="text-xs pb-1">stock : {stock}</span>
               </div>
-              </div>
+            </div>
           </div>
         </div>
       </div>

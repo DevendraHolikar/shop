@@ -48,6 +48,7 @@ const ProductsDetails = () => {
       {
         <ProductsDetailsCard
           key={getProductById.id}
+          id={getProductById.id}
           availabilityStatus={getProductById.availabilityStatus}
           brand={getProductById.brand}
           category={getProductById.category}
