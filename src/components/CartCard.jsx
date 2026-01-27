@@ -1,25 +1,29 @@
 import { useDispatch } from "react-redux";
-import { removeItem } from "../utils/cartSlice";
+import { removeItem, updateQuantity } from "../utils/cartSlice";
 import { useState } from "react";
 
 const CartCard = (props) => {
-  const { thumbnail, title, brand, price, id } = props.cardItem;
+  const { thumbnail, title, brand, price, id, quantity } = props.cardItem;
   const dispatch = useDispatch();
   const handleRemoveCart = (id) => {
     dispatch(removeItem(id));
   };
-  const [qntCount, setQntCount] = useState(1);
+  const [qntCount, setQntCount] = useState(quantity);
 
   const handleQntCountPluss = () => {
-    setQntCount(qntCount + 1);
+    const newQty = qntCount + 1;
+    setQntCount(newQty);
+    dispatch(updateQuantity({ id, quantity: newQty }));
   };
   const handleQntCountMin = () => {
-    if (qntCount <= 0) return;
-    setQntCount(qntCount - 1);
+    if (qntCount <= 1) return;
+    const newQty = qntCount - 1;
+    setQntCount(newQty);
+    dispatch(updateQuantity({ id, quantity: newQty }));
   };
 
   return (
-    <div className="flex items-center hover:bg-base-300 -mx-8 px-6 py-5">
+    <div className="flex items-center hover:bg-base-300 -mx-8 px-8 py-5">
       <div className="flex w-2/5">
         <div className="w-20">
           <img className="h-24" src={thumbnail} alt="" />
@@ -49,7 +53,7 @@ const CartCard = (props) => {
       </div>
       <span className="text-center w-1/5 font-semibold text-sm">${price}</span>
       <span className="text-center w-1/5 font-semibold text-sm">
-        ${price * qntCount}
+        ${Math.round((price * qntCount) * 100) / 100}
       </span>
 
       <button

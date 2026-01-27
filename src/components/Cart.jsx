@@ -1,10 +1,47 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartCard from "./CartCard";
+import { useState } from "react";
 
 const Cart = () => {
-
   const items = useSelector((store) => store.cart?.items || []);
+  const [shippingValue, setShippingValue] = useState(10);
+  const [promoInput, setPromoInput] = useState("");
+  const [discount, setDiscount] = useState(0);
+
+  const itemPlusQuantity = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
+
+  const finalTotal =
+    Math.round((itemPlusQuantity + shippingValue - discount) * 100) / 100;
+
+  const handleShippingValue = (e) => {
+    setShippingValue(Number(e.target.value));
+  };
+
+  const handlePromoCode = () => {
+    const code = promoInput.trim().toUpperCase();
+
+    let discountAmount = 0;
+
+    if (code === "SAVE10") {
+      discountAmount = 10;
+    } else if (code === "SAVE20") {
+      discountAmount = 20;
+    } else {
+      alert("Invalid promo code");
+      return;
+    }
+
+    if (discountAmount >= finalTotal) {
+      alert("Cart amount must be higher than discount");
+      return;
+    }
+
+    setDiscount(discountAmount);
+  };
 
   return (
     <div>
@@ -13,18 +50,14 @@ const Cart = () => {
           <div className="w-3/4 px-10 py-10 bg-base-300">
             <div className="flex justify-between border-b pb-8">
               <h1 className="font-semibold text-2xl">Shopping Cart</h1>
-              <h2 className="font-semibold text-2xl">
-                {items.length} Items
-              </h2>
+              <h2 className="font-semibold text-2xl">{items.length} Items</h2>
             </div>
 
             {items.length === 0 ? (
               <h2 className="text-center text-white mt-2">No Results Found</h2>
             ) : (
               items.map((cardItem, index) => {
-                return (
-                 <CartCard key={index} cardItem={cardItem} ></CartCard>
-                );
+                return <CartCard key={index} cardItem={cardItem}></CartCard>;
               })
             )}
 
@@ -47,37 +80,50 @@ const Cart = () => {
               Order Summary
             </h1>
             <div className="flex justify-between mt-10 mb-5">
-              <span className="font-semibold text-sm uppercase">Items {items.length}</span>
-              <span className="font-semibold text-sm">590$</span>
+              <span className="font-semibold text-sm uppercase">
+                Items {items.length}
+              </span>
+              <span className="font-semibold text-sm">
+                ${itemPlusQuantity.toFixed(2)}
+              </span>
             </div>
             <div>
               <label className="font-medium inline-block mb-3 text-sm uppercase">
                 Shipping
               </label>
-              <select className="block p-2 text-gray-600 w-full text-sm">
-                <option>Standard shipping - $10.00</option>
+
+              <select
+                value={shippingValue}
+                onChange={handleShippingValue}
+                className="select"
+              >
+                <option value={10}>Standard shipping - $10.00</option>
+                <option value={15}>Plus shipping - $15.00</option>
+                <option value={20}>Pro shipping - $20.00</option>
               </select>
             </div>
             <div className="py-10">
-              <label
-                for="promo"
-                className="font-semibold inline-block mb-3 text-sm uppercase"
-              >
+              <label className="font-semibold inline-block mb-3 text-sm uppercase">
                 Promo Code
               </label>
               <input
+                value={promoInput}
+                onChange={(e) => setPromoInput(e.target.value)}
                 type="text"
-                placeholder="Enter your code"
-                className="p-2 text-sm w-full"
+                placeholder="Type here"
+                className="input"
               />
             </div>
-            <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">
+            <button
+              onClick={handlePromoCode}
+              className="btn btn-secondary btn-wide"
+            >
               Apply
             </button>
             <div className="border-t mt-8">
               <div className="flex font-semibold justify-between py-6 text-sm uppercase">
                 <span>Total cost</span>
-                <span>$600</span>
+                <span>${items.length === 0 ? "0" : finalTotal.toFixed(2)}</span>
               </div>
               <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
                 Checkout
