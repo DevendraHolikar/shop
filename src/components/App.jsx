@@ -35,11 +35,14 @@ function App() {
           >
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="products" element={<Products />} />
-            <Route path="productsdetails/:productId" element={<ProductsDetails />} />
+
+            <Route path="products">
+              <Route index element={<Products />} />
+              <Route path=":productId" element={<ProductsDetails />} />
+            </Route>
+            
             <Route path="contact" element={<Contact />} />
             <Route path="cart" element={<Cart />} />
-
           </Route>
         </Routes>
       </BrowserRouter>

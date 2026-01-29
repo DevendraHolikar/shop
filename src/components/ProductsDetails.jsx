@@ -69,6 +69,7 @@ const ProductsDetails = () => {
           warrantyInformation={getProductById.warrantyInformation}
           weight={getProductById.weight}
         ></ProductsDetailsCard>
+        
       }
     </div>
   );

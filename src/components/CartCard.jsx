@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
 import { removeItem, updateQuantity } from "../utils/cartSlice";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const CartCard = (props) => {
-  const { thumbnail, title, brand, price, id, quantity } = props.cardItem;
+  const { discountPercentage, thumbnail, title, brand, price, id, quantity } = props.cardItem;
   const dispatch = useDispatch();
   const handleRemoveCart = (id) => {
     dispatch(removeItem(id));
@@ -23,19 +24,24 @@ const CartCard = (props) => {
   };
 
   return (
-    <div className="flex items-center hover:bg-base-300 -mx-8 px-8 py-5">
-      <div className="flex w-2/5">
-        <div className="w-20">
-          <img className="h-24" src={thumbnail} alt="" />
+    <div className="flex gap-4 md:gap-0 items-start md:items-center hover:bg-base-100 mt-8  md:p-4 flex-col md:flex-row">
+      <div className="flex w-full md:w-2/5 gap-4 flex-col md:flex-row">
+
+    
+        <div className="w-40 md:w-20 m-auto md:m-0">
+          <Link to={"/productsdetails/" + id}><img className="w-full md:w-24 bg-base-200" src={thumbnail} alt="" /></Link>
         </div>
-        <div className="flex flex-col justify-start ml-4 gap-1">
-          <span className="font-bold text-sm">{title}</span>
+        <div className="flex flex-col justify-start gap-1">
+          <Link to={"/productsdetails/" + id}><span className="font-bold text-sm">{title}</span></Link>
           <span className="text-xs">{brand}</span>
+          <span className="text-xs">Discount {discountPercentage}%</span>
         </div>
+
+
       </div>
-      <div className="flex justify-center w-1/5">
-        <div className="flex gap-2">
-          <button onClick={handleQntCountMin} className="btn btn-soft">
+      <div className="flex justify-items-start md:justify-center w-full md:w-1/5">
+        <div className="flex gap-2 w-full justify-center">
+          <button onClick={handleQntCountMin} className="btn btn-soft w-10">
             −
           </button>
           <input
@@ -46,22 +52,20 @@ const CartCard = (props) => {
             placeholder="Qty"
             className="input w-12"
           />
-          <button onClick={handleQntCountPluss} className="btn btn-soft">
+          <button onClick={handleQntCountPluss} className="btn btn-soft w-10">
             +
           </button>
         </div>
       </div>
-      <span className="text-center w-1/5 font-semibold text-sm">${price}</span>
-      <span className="text-center w-1/5 font-semibold text-sm">
-        ${Math.round((price * qntCount) * 100) / 100}
+      <span className="flex gap-2 flex-row md:flex-col justify-between md:items-center w-full md:w-1/5 font-semibold text-sm">Main Price<span className="text-xs">${price}</span></span>
+      <span className="flex gap-2 flex-row md:flex-col justify-between md:items-center w-full md:w-1/5 font-semibold text-sm">Main Price + Q<span className="text-xs">${Math.round((price * qntCount) * 100) / 100}</span>
       </span>
-
       <button
         onClick={() => handleRemoveCart(id)}
-        className="btn btn-active btn-error p-1"
+        className="btn btn-active btn-error p-1 w-full md:w-14 "
       >
         <svg
-          className="text-white w-6 h-6 m-auto "
+          className="text-white w-6 h-4 m-auto "
           aria-hidden="true"
           fill="currentColor"
           viewBox="0 0 20 20"

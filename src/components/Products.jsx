@@ -74,7 +74,7 @@ const Products = () => {
       ) : (
         <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-6 m-auto">
           {filteredData.map((item) => (
-            <Link to={"/productsdetails/" + item.id} key={item.id}>
+            <Link to={"/products/" + item.id} key={item.id}>
               <ProductCard
                 id={item.id}
                 title={item.title}
