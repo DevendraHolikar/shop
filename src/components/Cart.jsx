@@ -46,7 +46,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="container mx-auto mt-10">
+      <div className="max-w-[85rem] mx-auto mt-10">
         <div className="flex shadow-md my-10 gap-4 flex-col md:flex-row">
           <div className="w-full md:w-3/4 p-6  bg-base-300">
             <div className="flex justify-between border-b pb-8">
@@ -55,7 +55,7 @@ const Cart = () => {
             </div>
 
             {items.length === 0 ? (
-              <h2 className="text-center text-white mt-2">No Results Found</h2>
+              <h2 className="text-center text-white mt-2">Your cart is empty!</h2>
             ) : (
               items.map((cardItem, index) => {
                 return <CartCard key={index} cardItem={cardItem}></CartCard>;

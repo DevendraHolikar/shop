@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Features = () => {
   return (
     <div className="bg-background">
-      <div className="max-w-[85rem] px-4 xl:px-0 py-10 lg:pt-20 lg:pb-20 mx-auto">
+      <div className="max-w-[85rem] px-4 xl:px-0 py-10 lg:pt-0 lg:pb-14 mx-auto">
         <div className="max-w-3xl mb-10 lg:mb-14">
           <h2 className="text-foreground font-semibold text-2xl md:text-4xl md:leading-tight">
             Our shopping approach

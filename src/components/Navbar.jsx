@@ -52,8 +52,8 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link className="btn btn-ghost text-xl" to={"/"}>
-            daisyUI
+          <Link className="btn btn-ghost text-xm md:text-xl" to={"/"}>
+            Aura & Luxe
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

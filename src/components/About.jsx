@@ -1,7 +1,11 @@
-
+import Ourvision from "./Ourvision"
+import Teams from "./Teams"
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      <Ourvision></Ourvision>
+      <Teams></Teams>
+    </div>
   )
 }
 

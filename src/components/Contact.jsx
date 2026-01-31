@@ -1,6 +1,9 @@
+import ContactContent from "./ContactContent"
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div>
+      <ContactContent></ContactContent>
+    </div>
   )
 }
 

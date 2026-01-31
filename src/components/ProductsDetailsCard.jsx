@@ -47,7 +47,7 @@ const ProductsDetailsCard = (props) => {
   return (
     <div>
       <div className="bg-base-100 mx-4 md:mx-2">
-        <div className="flex flex-col lg:flex-row pt-6 gap-6 items-start">
+        <div className="max-w-[85rem] mx-auto flex flex-col lg:flex-row pt-6 gap-6 items-start">
           <div className="flex-1">
             <div className="flex flex-col">
               <img src={clickedImg} className="bg-base-300" />
@@ -167,7 +167,7 @@ const ProductsDetailsCard = (props) => {
         </div>
       </div>
 
-      <ul className="mx-2 list bg-base-100 rounded-box shadow-md">
+      <ul className="max-w-[85rem] mx-auto mx-2 list bg-base-100 rounded-box shadow-md">
         <li className="p-4 pb-2 text-xl font-bold tracking-wide">
           Most popular reviews
         </li>
