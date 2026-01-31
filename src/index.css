@@ -2,11 +2,30 @@
 @plugin "daisyui";
 
 
+.home-banner-container:after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  max-width: 97%;
+  
+  background: linear-gradient(180deg, transparent 0, transparent 30%, #000);
+  opacity: 0.8;
+}
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
 @media screen and (max-width: 600px) {
-.custome-flex{
+  .custome-flex {
     display: flex;
     flex-direction: column;
     gap: 2;
     align-items: center;
-}
+  }
 }

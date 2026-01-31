@@ -6,7 +6,6 @@ const ProductsDetailsCard = (props) => {
   const dispatch = useDispatch();
 
   const {
-    id,
     availabilityStatus,
     brand,
     category,

@@ -10,7 +10,7 @@ const ProductCard = (props) => {
             {title}
             <div className="badge badge-secondary">{rating}</div>
           </h2>
-          <p>{description}</p>
+          <p className="description">{description}</p>
           <div className="card-actions justify-end">
             {tags.map(tag => (
               <div key={tag} className="capitalize badge badge-outline">{tag}</div>
