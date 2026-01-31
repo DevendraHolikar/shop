@@ -16,35 +16,35 @@ const ContactContent = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
             <div>
               <label for="hs-firstname-contacts-1" className="block mb-2 text-sm text-foreground font-medium">First Name</label>
-              <input type="text" name="hs-firstname-contacts-1"  className="input py-2.5 sm:py-3 px-4 block w-full bg-layer border-layer-line rounded-lg sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none" />
+              <input type="text" name="hs-firstname-contacts-1"  className="input w-full" />
             </div>
 
             <div>
               <label for="hs-lastname-contacts-1" className="block mb-2 text-sm text-foreground font-medium">Last Name</label>
-              <input type="text" name="hs-lastname-contacts-1" className="input py-2.5 sm:py-3 px-4 block w-full bg-layer border-layer-line rounded-lg sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none" />
+              <input type="text" name="hs-lastname-contacts-1" className="input w-full" />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
             <div>
               <label for="hs-email-contacts-1" className="block mb-2 text-sm text-foreground font-medium">Email</label>
-              <input type="email" name="hs-email-contacts-1"  autocomplete="email" className="input py-2.5 sm:py-3 px-4 block w-full bg-layer border-layer-line rounded-lg sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none" />
+              <input type="email" name="hs-email-contacts-1"  autocomplete="email" className="input w-full" />
             </div>
 
             <div>
               <label for="hs-phone-number-1" className="block mb-2 text-sm text-foreground font-medium">Phone Number</label>
-              <input type="text" name="hs-phone-number-1" className="input py-2.5 sm:py-3 px-4 block w-full bg-layer border-layer-line rounded-lg sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none" />
+              <input type="text" name="hs-phone-number-1" className="input w-full" />
             </div>
           </div>
 
           <div>
             <label for="hs-about-contacts-1" className="block mb-2 text-sm text-foreground font-medium">Details</label>
-            <input id="hs-about-contacts-1" name="hs-about-contacts-1" rows="4" className="input py-2.5 sm:py-3 px-4 block w-full bg-layer border-layer-line rounded-lg sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none"></input>
+            <input id="hs-about-contacts-1" name="hs-about-contacts-1" rows="4" className="input w-full"></input>
           </div>
         </div>
 
         <div className="mt-6 grid">
-          <button type="submit" className="btn w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg bg-primary border border-primary-line text-primary-foreground hover:bg-primary-hover focus:outline-hidden focus:bg-primary-focus disabled:opacity-50 disabled:pointer-events-none">Send inquiry</button>
+          <button type="submit" className="btn w-full py-3 px-4 btn-primary">Send inquiry</button>
         </div>
 
         <div className="mt-3 text-center">

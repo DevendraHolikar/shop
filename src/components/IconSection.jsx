@@ -5,14 +5,14 @@ const IconSection = () => {
 
     {/* Fast Delivery */}
     <div className="text-center">
-      <div className="flex justify-center items-center size-12 bg-muted border border-line-2 rounded-full mx-auto">
+      <div className="flex justify-center items-center size-12 bg-base-300 border border-line-2 rounded-full mx-auto">
         <svg
-          className="shrink-0 size-5 text-muted-foreground-2"
+          className="shrink-0 size-5 text-muted-foreground-2 "
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="2" 
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -34,7 +34,7 @@ const IconSection = () => {
 
     {/* Secure Payments */}
     <div className="text-center">
-      <div className="flex justify-center items-center size-12 bg-muted border border-line-2 rounded-full mx-auto">
+      <div className="flex justify-center items-center size-12 bg-base-300 border border-line-2 rounded-full mx-auto">
         <svg
           className="shrink-0 size-5 text-muted-foreground-2"
           xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ const IconSection = () => {
 
     {/* Easy Returns */}
     <div className="text-center">
-      <div className="flex justify-center items-center size-12 bg-muted border border-line-2 rounded-full mx-auto">
+      <div className="flex justify-center items-center size-12 bg-base-300 border border-line-2 rounded-full mx-auto">
         <svg
           className="shrink-0 size-5 text-muted-foreground-2"
           xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ const IconSection = () => {
 
     {/* 24/7 Support */}
     <div className="text-center">
-      <div className="flex justify-center items-center size-12 bg-muted border border-line-2 rounded-full mx-auto">
+      <div className="flex justify-center items-center size-12 bg-base-300 border border-line-2 rounded-full mx-auto">
         <svg
           className="shrink-0 size-5 text-muted-foreground-2"
           xmlns="http://www.w3.org/2000/svg"

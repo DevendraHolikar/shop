@@ -1,3 +1,4 @@
+import {DAVID,AMIL,EBELE,MARIA,DLIA,TOM} from "../utils/constants"
 
 
 const Teams = () => {
@@ -15,7 +16,7 @@ const Teams = () => {
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <div className="flex flex-col rounded-xl p-4 md:p-6  bg-base-300">
       <div className="flex items-center gap-x-4">
-        <img className="rounded-full size-20" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+        <img className="rounded-full size-20" src={DAVID} alt="Avatar" />
         <div className="grow">
           <h3 className="font-medium text-foreground">
             David Forren
@@ -54,7 +55,7 @@ const Teams = () => {
 
     <div className="flex flex-col rounded-xl p-4 md:p-6  bg-base-300">
       <div className="flex items-center gap-x-4">
-        <img className="rounded-full size-20" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+        <img className="rounded-full size-20" src={AMIL} alt="Avatar" />
         <div className="grow">
           <h3 className="font-medium text-foreground">
             Amil Evara
@@ -93,7 +94,7 @@ const Teams = () => {
 
     <div className="flex flex-col rounded-xl p-4 md:p-6  bg-base-300">
       <div className="flex items-center gap-x-4">
-        <img className="rounded-full size-20" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+        <img className="rounded-full size-20" src={EBELE} alt="Avatar" />
         <div className="grow">
           <h3 className="font-medium text-foreground">
             Ebele Egbuna
@@ -132,7 +133,7 @@ const Teams = () => {
 
     <div className="flex flex-col rounded-xl p-4 md:p-6  bg-base-300">
       <div className="flex items-center gap-x-4">
-        <img className="rounded-full size-20" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+        <img className="rounded-full size-20" src={MARIA} alt="Avatar" />
         <div className="grow">
           <h3 className="font-medium text-foreground">
             Maria Powers
@@ -171,7 +172,7 @@ const Teams = () => {
 
     <div className="flex flex-col rounded-xl p-4 md:p-6  bg-base-300">
       <div className="flex items-center gap-x-4">
-        <img className="rounded-full size-20" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+        <img className="rounded-full size-20" src={DLIA}  alt="Avatar" />
         <div className="grow">
           <h3 className="font-medium text-foreground">
             Delia Pawelke
@@ -210,7 +211,7 @@ const Teams = () => {
 
     <div className="flex flex-col rounded-xl p-4 md:p-6  bg-base-300">
       <div className="flex items-center gap-x-4">
-        <img className="rounded-full size-20" src="https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+        <img className="rounded-full size-20" src={TOM} alt="Avatar" />
         <div className="grow">
           <h3 className="font-medium text-foreground">
             Tom Lowry

@@ -116,7 +116,7 @@ const ProductsDetailsCard = (props) => {
               <button
                 type="button"
                 onClick={handleAddToCardClick}
-                className="btn btn-lg"
+                className="btn btn-primary w-full md:w-fit"
               >
                 Add to Cart
               </button>

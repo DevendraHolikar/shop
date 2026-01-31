@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import {RESEARCH_IMG} from "../utils/constants"
 
 const Features = () => {
   return (
@@ -19,8 +20,8 @@ const Features = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-center">
           <div className="aspect-w-16 aspect-h-9 lg:aspect-none">
             <img
-              class="w-full object-cover rounded-xl"
-              src="https://images.unsplash.com/photo-1587614203976-365c74645e83?q=80&w=480&h=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              className="w-full object-cover rounded-xl"
+              src={RESEARCH_IMG}
               alt="Online shopping experience"
             />
           </div>
@@ -43,7 +44,7 @@ const Features = () => {
 
               <div className="grow pt-0.5 pb-8 sm:pb-12">
                 <p className="text-sm lg:text-base text-muted-foreground-1">
-                  <span class="text-foreground">
+                  <span className="text-foreground">
                     Customer Needs & Product Research:
                   </span>
                   We analyze customer preferences, trends, and demand to curate
@@ -63,7 +64,7 @@ const Features = () => {
 
               <div className="grow pt-0.5 pb-8 sm:pb-12">
                 <p className="text-sm lg:text-base text-muted-foreground-1">
-                  <span class="text-foreground">
+                  <span className="text-foreground">
                     Product Selection & Quality Check:
                   </span>
                   Each product goes through careful selection and quality checks
@@ -83,7 +84,7 @@ const Features = () => {
 
               <div className="grow pt-0.5 pb-8 sm:pb-12">
                 <p className="text-sm md:text-base text-muted-foreground-1">
-                  <span class="text-foreground">
+                  <span className="text-foreground">
                     Order Processing & Fast Delivery:
                   </span>
                   Once ordered, products are securely packed and delivered
@@ -103,7 +104,7 @@ const Features = () => {
 
               <div className="grow pt-0.5 pb-8 sm:pb-12">
                 <p className="text-sm md:text-base text-muted-foreground-1">
-                  <span class="text-foreground">
+                  <span className="text-foreground">
                     Customer Support & Continuous Improvement:
                   </span>
                   We listen to customer feedback, offer easy returns, and
@@ -113,7 +114,7 @@ const Features = () => {
             </div>
 
             <Link
-              class="group inline-flex items-center gap-x-2 py-2 px-3 bg-primary border border-primary-line text-primary-foreground font-medium text-sm rounded-full focus:outline-hidden"
+              className="btn btn-primary"
               to={"/products"}
             >
               Start Shopping
