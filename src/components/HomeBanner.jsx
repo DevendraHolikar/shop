@@ -21,7 +21,7 @@ const HomeBanner = () => {
   // console.log("Home", count, slideImg);
 
   return (
-    <div className="px-4 mt-6 sm:px-6 lg:px-6 relative">
+    <div className="px-4 mt-6 sm:px-6 lg:px-6 relative pb-3 md:pb-0">
       <div
         style={{ backgroundImage: `url(${slideImg?.image})` }}
         className="h-120 md:h-[80dvh] flex flex-col bg-cover bg-center bg-no-repeat rounded-2xl"
@@ -33,7 +33,7 @@ const HomeBanner = () => {
            {slideImg?.title}
           </h1>
           <div className="flex gap-2 absolute top-4 right-10">
-            <button className="btn"  disabled={count === 1}  onClick={handlePrev}>
+            <button className="btn h-6 md:h-auto"  disabled={count === 1}  onClick={handlePrev}>
               <svg
                 className="h-6 w-6 fill-current md:h-8 md:w-8 rtl:rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const HomeBanner = () => {
                 <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path>
               </svg>
             </button>
-            <button className="btn" disabled={count === SLIDER_DATA.length} onClick={handleNext}>
+            <button className="btn h-6 md:h-auto" disabled={count === SLIDER_DATA.length} onClick={handleNext}>
               <svg
                 className="h-6 w-6 fill-current md:h-8 md:w-8 rtl:rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
