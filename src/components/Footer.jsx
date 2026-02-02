@@ -1,17 +1,12 @@
+import {COMPANY_NAME} from "../utils/constants"
+
+
 const Footer = () => {
   return (
-    // <footer classNameName="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
-    //   <aside>
-    //     <p>
-    //       Copyright © {new Date().getFullYear()} - All right reserved by ACME
-    //       Industries Ltd
-    //     </p>
-    //   </aside>
-    // </footer>
 <footer className="mt-auto w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-base-300">
   <div className="text-center">
     <div>
-      <a className="flex-none text-xl font-semibold text-foreground" href="#" aria-label="Brand">Aura & Luxe</a>
+      <a className="flex-none text-xl font-semibold text-foreground" href="#" aria-label="Brand">{COMPANY_NAME}</a>
     </div>
 
     <div className="mt-3">

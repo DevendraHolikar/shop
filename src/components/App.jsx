@@ -9,7 +9,6 @@ import ProtectedRoute from "./ProtectedRoute";
 import PublicRoute from "./PublicRoute";
 import ProductsDetails from "./ProductsDetails";
 import Cart from "./Cart";
-import Order from "./Order";
 
 function App() {
   return (
@@ -44,7 +43,6 @@ function App() {
             
             <Route path="contact" element={<Contact />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="order" element={<Order />} />
 
           </Route>
           

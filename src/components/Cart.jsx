@@ -51,7 +51,7 @@ const Cart = () => {
           <div className="w-full md:w-3/4 p-6  bg-base-300">
             <div className="flex justify-between border-b pb-8">
               <h1 className="font-semibold text-2xl">Shopping Cart</h1>
-              <h2 className="font-semibold text-2xl">{items.length} Items</h2>
+              <h2 className="font-semibold text-2xl">{items.length} cart items</h2>
             </div>
 
             {items.length === 0 ? (

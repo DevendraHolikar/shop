@@ -23,6 +23,4 @@ export const DLIA = "https://images.unsplash.com/photo-1580489944761-15a19d65495
 export const TOM = "https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
 
 
-// https://dummyjson.com/products
-// https://fakestoreapi.com/products
-// https://proxy.corsfix.com/?
+export const COMPANY_NAME = "Aura & Luxe"

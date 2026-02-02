@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../utils/userSlice";
+import {COMPANY_NAME} from "../utils/constants"
 
 const Navbar = () => {
   const disatch = useDispatch();
@@ -48,15 +49,12 @@ const Navbar = () => {
                 <Link to={"/products"}>Products</Link>
               </li>
               <li>
-                <Link to={"/order"}>Order</Link>
-              </li>
-              <li>
                 <Link to={"/contact"}>Contact</Link>
               </li>
             </ul>
           </div>
           <Link className="btn btn-ghost text-xm md:text-xl" to={"/"}>
-            Aura & Luxe
+            {COMPANY_NAME}
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -70,9 +68,6 @@ const Navbar = () => {
             <li>
               <Link to={"/products"}>Products</Link>
             </li>
-             <li>
-                <Link to={"/order"}>Order</Link>
-              </li>
             <li>
               <Link to={"/contact"}>Contact</Link>
             </li>
